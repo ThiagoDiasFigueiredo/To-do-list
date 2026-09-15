@@ -4,12 +4,21 @@ def salvar_tarefas(lista_tarefas):
     with open('tarefas.json','w',encoding='utf-8') as arquivo:
         json.dump(lista_tarefas,arquivo,indent=4,ensure_ascii=False)
 
+def carregar_tarefas():
+    try:
+        with open('tarefas.json', 'r', encoding='utf-8') as arquivo:
+            lista_tarefas = json.load(arquivo)
+
+        return lista_tarefas
+
+    except FileNotFoundError:
+        return []
 def tarefas():
     print('================')
     print('LISTA DE TAREFAS')
     print('================')
 
-    lista_tarefas = []
+    lista_tarefas = carregar_tarefas()
 
     usuario = 0
 
