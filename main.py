@@ -1,3 +1,9 @@
+import json
+
+def salvar_tarefas(lista_tarefas):
+    with open('tarefas.json','w',encoding='utf-8') as arquivo:
+        json.dump(lista_tarefas,arquivo,indent=4,ensure_ascii=False)
+
 def tarefas():
     print('================')
     print('LISTA DE TAREFAS')
@@ -80,13 +86,16 @@ def tarefas():
                 escolha = True
             
             lista_tarefas[mudanca-1]["Concluida"] = escolha
-            
+
+        elif usuario == 5:
+            salvar_tarefas(lista_tarefas)
+            print('Tarefas salvas!')
     print('Programa encerrado!')
 
 
 def main():
+    
     tarefas()
-
 
 if __name__ == '__main__':
     main()
