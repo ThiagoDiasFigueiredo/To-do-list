@@ -85,10 +85,11 @@ def tarefas():
                 print(f'Concluída: {lista_tarefas[i]["Concluida"]}')
 
             mudanca = int(input('Digite a tarefa que você quer mudar de estado:'))
-            escolha = int(input('Escolha qual estado você quer: '))
+            
             print('1: False')
             print('2: True')
-            escolha = int(input(''))
+        
+            escolha = int(input('Escolha qual estado você quer: '))
             if escolha == 1:
                 escolha = False
             elif escolha == 2:
